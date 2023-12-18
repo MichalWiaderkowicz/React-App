@@ -3,7 +3,6 @@ import Column from './../Column/Column';
 import ColumnForm from './../ColumnForm/ColumnForm';
 import { useState } from 'react';
 import shortid from 'shortid';
-import CardForm from '../CardForm/CardForm';
 
 const List = () => {
     
@@ -38,7 +37,7 @@ const List = () => {
 	]);
 
 	const addColumn = newColumn => {
-		setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [] }]);
+		setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [], }]);
 	};
 
 	const addCard = (newCard, columnId) => {
@@ -60,11 +59,10 @@ const List = () => {
 			</header>
 			<p className={styles.description}>Interesting things I want to check out</p>
 			<section className={styles.columns}>
-				{columns.map(column => <Column key={column.id} title={column.title} icon={column.icon} cards={column.cards} addCard={addCard} />)}
+				{columns.map(column => <Column key={column.id} id={column.id} title={column.title} icon={column.icon} cards={column.cards} addCard={addCard} />)}
 			</section>
 			<ColumnForm action={addColumn} />
 		</div>
 	);
 };
-
 export default List;
