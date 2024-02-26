@@ -25,4 +25,8 @@
         font-weight: bold;
         text-transform: capitalize;
     }
+
+    .linkActive {
+        color: $color-warning;
+    }
 }
