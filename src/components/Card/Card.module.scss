@@ -11,3 +11,11 @@
     justify-content: space-between;
     font-weight: bold;
 }
+button {
+    border: none;
+    background-color: $color-light;
+    cursor: pointer;
+    &.isFav i {
+        color: $color-fav;
+    }
+}
