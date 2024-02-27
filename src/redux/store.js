@@ -1,6 +1,5 @@
 import { createStore, combineReducers } from 'redux';
 import initialState from './initialState';
-import shortid from 'shortid';
 import strContains from '../utils/strContains';
 import listsReducer from './listsRedux'
 import searchStringReducer from './searchStringRedux';
@@ -18,8 +17,6 @@ export const getListById = ({ lists }, listId) => lists.find(list => list.id ===
 
 export const getColumnsByList = ({columns}, listId) => columns.filter(columns => columns.listId === listId);
 
-export const getAllLists = (state) => state.lists;
-
 export const getSearchString = (state) => state.searchString;
 
 
@@ -29,8 +26,6 @@ export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 export const addCard = payload => ({ type: 'ADD_CARD', payload });
 
 export const updateSearchString = payload => ({ type: 'UPDATE_SEARCHSTRING', payload});
-
-export const addList = payload => ({ type: 'ADD_LIST', payload});
 
 export const toggleCardFavorite = payload => ({ type: 'TOGGLE_CARD_FAVORITE', payload});
 
