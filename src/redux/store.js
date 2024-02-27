@@ -34,7 +34,6 @@ export const addList = payload => ({ type: 'ADD_LIST', payload});
 
 export const toggleCardFavorite = payload => ({ type: 'TOGGLE_CARD_FAVORITE', payload});
 
-
 const subreducers = {
   lists: listsReducer,
   columns: columnsReducer,
